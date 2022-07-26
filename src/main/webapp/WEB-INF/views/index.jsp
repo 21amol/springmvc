@@ -13,7 +13,7 @@
 	<h1>This page is called by home controller/home</h1>
 
 	<%
-	String name = (String) request.getAttribute("name");
+	String name = (String) request.getAttribute("name");  //Type casting is done and is required, as it is object.
 	Integer jersey = (Integer) request.getAttribute("jersey");
 	List<String> players = (List<String>) request.getAttribute("p");
 	%>
