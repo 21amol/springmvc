@@ -8,10 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
 
+	//Using Model...
 	@RequestMapping("/home")
 	public String home(Model model) {
 		System.out.println("Welcome to Home...");
@@ -26,7 +28,7 @@ public class HomeController {
 		players.add("Ozil");
 		model.addAttribute("p", players);
 
-		return "index";
+		return "index";                       // This is your view name...
 	}
 
 	@GetMapping("/about")
@@ -39,5 +41,23 @@ public class HomeController {
 	public String help() {
 		System.out.println("Welcome to Help...");
 		return "help";
+	}
+	
+	
+	// Using ModelAndView
+	@GetMapping("/services")
+	public ModelAndView services() {
+		ModelAndView modelAndView = new ModelAndView();
+		System.out.println("Welcome to services...");
+		
+		//setting the data...
+		modelAndView.addObject("service","Fitness and Healthy Lifestyle");
+		modelAndView.addObject("date",10);
+		
+		//setting the view name...
+		modelAndView.setViewName("services");
+		
+		//object of ModelAndView returned...
+		return modelAndView;
 	}
 }

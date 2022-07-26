@@ -15,10 +15,10 @@
 	 <context:component-scan base-package="springmvc.controller" /> 
 
 
-	<!-- Line 22 to 30 is the...View Resolver Config -->
+	<!-- Line 20 to 28 is the...View Resolver Config. View Resolver will help controller to open the required page given in return.-->
 
 	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"       
 		name="viewResolver">
 
 		<property name="prefix" value="/WEB-INF/views/" />    <!-- value shows the Path -->
