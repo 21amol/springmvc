@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-	//Using Model...
+	// Using Model...
 	@RequestMapping("/home")
 	public String home(Model model) {
 		System.out.println("Welcome to Home...");
@@ -28,7 +28,7 @@ public class HomeController {
 		players.add("Ozil");
 		model.addAttribute("p", players);
 
-		return "index";                       // This is your view name...
+		return "home"; // This is your .jsp file in view folder...
 	}
 
 	@GetMapping("/about")
@@ -42,22 +42,27 @@ public class HomeController {
 		System.out.println("Welcome to Help...");
 		return "help";
 	}
-	
-	
+
 	// Using ModelAndView
 	@GetMapping("/services")
 	public ModelAndView services() {
 		ModelAndView modelAndView = new ModelAndView();
 		System.out.println("Welcome to services...");
-		
-		//setting the data...
-		modelAndView.addObject("service","Fitness and Healthy Lifestyle");
-		modelAndView.addObject("date",10);
-		
-		//setting the view name...
+
+		// setting the data...
+		modelAndView.addObject("service", "Fitness and Healthy Lifestyle");
+		modelAndView.addObject("date", 10);
+
+		List<Integer> batches = new ArrayList<Integer>();
+		batches.add(15);
+		batches.add(20);
+		batches.add(25);
+		modelAndView.addObject("b", batches);
+
+		// setting the view name...
 		modelAndView.setViewName("services");
-		
-		//object of ModelAndView returned...
+
+		// object of ModelAndView returned...
 		return modelAndView;
 	}
 }
