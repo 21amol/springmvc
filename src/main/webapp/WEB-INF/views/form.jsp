@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%@page isELIgnored="false"%>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,8 +23,9 @@
 
 	<div class="container mt-5">
 		<h1 class="text-center">Registration Form</h1>
+		<p class="text-center">Login into the Football World</p>
 		<br>
-
+		
 		<!-- action is your path used in formHandler method in form controller. -->
 		<form action="submitform" method="post">
 			<div class="form-group">
